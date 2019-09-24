@@ -1,0 +1,15 @@
+Simplified schematics for Switchless kernal switcher:  
+                                                       
+                                                       
+                +----------|0.1uF|----------+          
+                |                           |          
+                |          /--\  /--\       |          
+                |      PB5 |  \--/  | VCC---*-- +5V    
+                |          |cBLK    |                  
+                |      PB3 | ATTINY | PB2---RESTORE    
+                |          |        |                  
+                |      PB4 |   85   | PB1---RESET      
+                |          |        |                  
+                +------GND |        | PB0---A13 (EPROM)
+                           \--------/                  
+                                                       
