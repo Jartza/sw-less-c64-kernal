@@ -25,8 +25,9 @@ int main(void) {
 
     // Code just busy-loops here. This code makes AVR simulate a simple
     // gated D latch where RESTORE line acts as a data pin and RESET line
-    // acts as enable line. The only difference to gated D latch is that
-    // the output is invert of the input.
+    // acts as enable line. Differences to gated D latch is that the 
+    // output is ~Q (inverted) and enable is also inverted (enables when
+    // RESET low)
     while (1) {
         // As long as RESET-line stays low, keep outputting
         // the RESTORE-line state inverted to output pin.
