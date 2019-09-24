@@ -1,5 +1,7 @@
 // Simple "switchless" kernal switcher for Commodore 64
 // using ATTiny25/45/85 chip.
+// 
+// (C) 2019 Jari Tulilahti
 
 #include <avr/io.h>
 #include <stdint.h>
