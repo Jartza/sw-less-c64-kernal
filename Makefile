@@ -8,6 +8,8 @@
 DEVICE     = attiny85
 PROGRAMMER = usbasp
 
+# options below should not be changed until you know what you are doing
+#
 CLOCK      = 1000000
 FUSES      = -U lfuse:w:0x62:m -U hfuse:w:0xdf:m -U efuse:w:0xff:m
 OBJECTS    = main.o
