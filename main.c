@@ -1,25 +1,37 @@
+// Simple "switchless" kernal switcher for Commodore 64
+// using ATTiny25/45/85 chip.
+
 #include <avr/io.h>
 #include <stdint.h>
 #include "avr_common.h"
 
+// Make "bit pointers" for input and output pins
 #define I_RESTORE BITP(PINB, PB0)
 #define I_RESET BITP(PINB, PB1)
 #define O_SELECT BITP(PORTB, PB2)
 
+// Make "bit pointers" for data direction registers to pins
 #define DIR_RESTORE BITP(DDRB, PB0)
 #define DIR_RESET BITP(DDRB, PB1)
 #define DIR_SELECT BITP(DDRB, PB2)
 
 int main(void) {
+    // MUX input and output pins
     DIR_RESTORE = DIR_IN;
     DIR_RESET = DIR_IN;
     DIR_SELECT = DIR_OUT;
+
+    // Code just busy-loops here. This code makes AVR simulate a simple
+    // gated D latch where RESTORE line acts as a data pin and RESET line
+    // acts as enable line. The only difference to gated D latch is that
+    // the output is invert of the input.
     while (1) {
-        // As long as RESET stays low, keep changing output state according to input
+        // As long as RESET-line stays low, keep outputting
+        // the RESTORE-line state inverted to output pin.
         while (!I_RESET) {
             O_SELECT = (I_RESTORE ? LEVEL_LOW : LEVEL_HIGH);
         }
-        // As long as RESET is high, do nothing
+        // As long as RESET-line is high, keep output state (do nothing)
         while (I_RESET) {}
     }
 }
