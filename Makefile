@@ -6,7 +6,7 @@
 # depending of the chip you are using
 # 
 DEVICE     = attiny85
-PROGRAMMER = -c usbasp
+PROGRAMMER = usbasp
 
 CLOCK      = 1000000
 FUSES      = -U lfuse:w:0x62:m -U hfuse:w:0xdf:m -U efuse:w:0xff:m
