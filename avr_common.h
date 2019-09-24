@@ -1,10 +1,8 @@
-//
-// Common bit handling macros for AVR (avr-gcc)
-//
-// (C) Jari Tulilahti
-//
-
-#include <stdint.h>
+/*    Common bit handling macros for AVR (avr-gcc)
+ *
+ *    (C) Jari Tulilahti
+ *
+ */
 
 // Struct to handle bits in registers
 typedef struct {

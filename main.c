@@ -1,5 +1,6 @@
-#include "avr_common.h"
 #include <avr/io.h>
+#include <stdint.h>
+#include "avr_common.h"
 
 #define I_RESTORE BITP(PINB, PB0)
 #define I_RESET BITP(PINB, PB1)
