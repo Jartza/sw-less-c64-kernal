@@ -8,14 +8,14 @@
 #include "avr_common.h"
 
 // Make "bit pointers" for input and output pins
-#define I_RESTORE BITP(PINB, PB0)
+#define O_SELECT BITP(PORTB, PB0)
 #define I_RESET BITP(PINB, PB1)
-#define O_SELECT BITP(PORTB, PB2)
+#define I_RESTORE BITP(PINB, PB2)
 
 // Make "bit pointers" for data direction registers to pins
-#define DIR_RESTORE BITP(DDRB, PB0)
+#define DIR_SELECT BITP(DDRB, PB0)
 #define DIR_RESET BITP(DDRB, PB1)
-#define DIR_SELECT BITP(DDRB, PB2)
+#define DIR_RESTORE BITP(DDRB, PB2)
 
 int main(void) {
     // MUX input and output pins
